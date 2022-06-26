@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "@fastify/cookie": "7.0.0",
+    "@fastify/helmet": "9.1.0",
     "@fastify/session": "9.0.0",
     "connect-mongo": "4.6.0",
     "express-session": "1.17.3",

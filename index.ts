@@ -5,6 +5,7 @@ import crypto from "crypto";
 import ms from "ms";
 import MongoStore from "connect-mongo";
 import { MongoMemoryServer } from "mongodb-memory-server";
+import fastifyHelmet from "@fastify/helmet";
 
 declare module "fastify" {
   interface Session {
@@ -17,6 +18,7 @@ declare module "fastify" {
 
   const mongod = await MongoMemoryServer.create();
 
+  server.register(fastifyHelmet);
   server.register(fastifyCookie);
   server.register(fastifySessionPlugin, {
     secret: crypto.randomBytes(64).toString("hex"),
