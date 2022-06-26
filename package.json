@@ -1,0 +1,23 @@
+{
+  "name": "session-repro",
+  "private": true,
+  "scripts": {
+    "start": "ts-node index.ts"
+  },
+  "dependencies": {
+    "@fastify/cookie": "7.0.0",
+    "@fastify/session": "9.0.0",
+    "connect-mongo": "4.6.0",
+    "express-session": "1.17.3",
+    "fastify": "4.0.2",
+    "mongodb": "4.7.0",
+    "mongodb-memory-server": "8.7.1",
+    "ms": "2.1.3"
+  },
+  "devDependencies": {
+    "@types/ms": "0.7.31",
+    "fastify-tsconfig": "1.0.1",
+    "ts-node": "10.8.1",
+    "typescript": "4.7.4"
+  }
+}
