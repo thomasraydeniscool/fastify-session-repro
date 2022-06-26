@@ -1,5 +1,5 @@
 {
-  "name": "session-repro",
+  "name": "fastify-session-repro",
   "private": true,
   "scripts": {
     "start": "ts-node index.ts"
