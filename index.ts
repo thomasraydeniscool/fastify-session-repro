@@ -30,13 +30,17 @@ declare module "fastify" {
     }),
   });
 
-  server.get("/session", {}, (request, reply) => {
+  server.get("/session", async (request, reply) => {
     request.session.hello = "world";
 
-    reply.redirect("https://google.com");
+    reply.redirect("/session/test");
   });
 
-  await server.listen({ port: 3000, host: "0.0.0.0" });
+  server.get("/session/test", async (request, reply) => {
+    reply.send(request.session.hello);
+  });
 
-  console.log("Listening on port 3000");
+  await server.listen({ port: 3000 });
+
+  console.log("Listening on http://localhost:3000");
 })();
