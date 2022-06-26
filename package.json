@@ -17,7 +17,6 @@
   },
   "devDependencies": {
     "@types/ms": "0.7.31",
-    "fastify-tsconfig": "1.0.1",
     "ts-node": "10.8.1",
     "typescript": "4.7.4"
   }
