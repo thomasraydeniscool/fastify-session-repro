@@ -18,7 +18,12 @@ declare module "fastify" {
 
   const mongod = await MongoMemoryServer.create();
 
+  /**
+   * It will start working if you remove helmet or session store
+   */
+  // Remove me
   server.register(fastifyHelmet);
+
   server.register(fastifyCookie);
   server.register(fastifySessionPlugin, {
     secret: crypto.randomBytes(64).toString("hex"),
@@ -26,6 +31,7 @@ declare module "fastify" {
       secure: false,
       maxAge: ms("5m"),
     },
+    // Or remove me
     store: MongoStore.create({
       mongoUrl: mongod.getUri(),
       collectionName: "_sessions",
