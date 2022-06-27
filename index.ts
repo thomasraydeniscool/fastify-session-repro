@@ -42,6 +42,9 @@ declare module "fastify" {
     request.session.hello = "world";
 
     reply.redirect("/session/test");
+
+    // Fix from mcollina
+    return reply;
   });
 
   server.get("/session/test", async (request, reply) => {
